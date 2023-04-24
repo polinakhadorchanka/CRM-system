@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       transitionProperty: {
         'nav': 'left, opacity',
+        'bg-color': 'backgroundColor',
       },
     }
   },

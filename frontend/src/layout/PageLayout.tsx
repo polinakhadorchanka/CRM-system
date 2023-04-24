@@ -23,12 +23,12 @@ const PageLayout: FC<PageLayoutProps> = ({children}) => {
             </div>
           </div>
         </div>
-        <div className={'w-full h-px bg-gradient-to-r from-sky-900 dark:from-sky-600 from-15% via-sky-600 via-30% to-95% ' +
+        <div className={'w-full h-px bg-gradient-to-r from-sky-900 from-15% via-sky-600 via-30% to-95% ' +
           'dark:from-sky-600 dark:from-15% dark:via-sky-200 dark:via-30% dark:to-95%'}></div>
       </header>
       <div className={'pt-16 lg:pt-20 grow'}>
         <main className={'pt-1 pb-2'}>
-          <div className={'container px-4 md:px-8 lg:px-16 mx-auto py-2'}>
+          <div className={'container px-4 md:px-8 lg:px-16 mx-auto py-2 md:py-3'}>
             {children}
           </div>
         </main>

@@ -5,6 +5,7 @@ export interface IVacancyShort {
   Name: string;
   Posted: string | null;
   CompanyName: string;
+  CompanyLogo: string | null;
 }
 
 export interface IVacancy {
