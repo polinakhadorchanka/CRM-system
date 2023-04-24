@@ -1,5 +1,12 @@
 import {IError} from "@store/types/error";
 
+export interface IVacancyShort {
+  ID: number;
+  Name: string;
+  Posted: string | null;
+  CompanyName: string;
+}
+
 export interface IVacancy {
   ID: number;
   Name: string;
@@ -26,7 +33,7 @@ export interface VacancyState {
 
 export enum VACANCY_ACTION_TYPE {
   GET_VACANCY = 'GET_VACANCY',
-  GET_ERROR = 'SET_ERROR'
+  GET_ERROR = 'GET_VACANCY_ERROR'
 }
 
 interface GetVacancyAction {
