@@ -20,7 +20,6 @@ const Vacancies = () => {
         :
         <div>
           <div>{JSON.stringify(vacancies)}</div>
-          <div>{JSON.stringify(vacancies)}</div>
           <div>{pageCount}</div>
         </div>
       }
