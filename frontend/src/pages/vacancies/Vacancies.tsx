@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {fetchVacancies} from "@store/action-creator/vacancies";
 import {useTypedSelector} from "@hooks/useTypedSelector";
 import Error from "@pages/error";
+import PageLayout from "@layout/PageLayout";
 
 const Vacancies = () => {
   const dispatch: any = useDispatch();
@@ -13,7 +14,7 @@ const Vacancies = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <PageLayout>
       {error
         ? <Error code={error.Code} value={error.Value}/>
         :
@@ -22,7 +23,7 @@ const Vacancies = () => {
           <div>{pageCount}</div>
         </div>
       }
-    </>
+    </PageLayout>
   );
 };
 
