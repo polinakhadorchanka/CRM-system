@@ -32,7 +32,7 @@ const Nav: FC<NavProps> = ({isAdmin = false}) => {
         {isMount &&
           <div className={`fixed -mt-0.5 top-16 right-0 bg-white dark:bg-gray-900 transition-nav duration-500
             ${animation ? 'opacity-100 left-0' : 'opacity-0 -left-20'}`}>
-            <div className={'container mx-auto p-4'}>
+            <div className={'sm:container mx-auto p-4'}>
               <nav className={'flex flex-col gap-3'}>
                 <Link to={'/'}
                       className={'block uppercase text-gray-600 hover:text-sky-600 ' +

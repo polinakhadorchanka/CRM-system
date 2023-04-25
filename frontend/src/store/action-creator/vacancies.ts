@@ -22,7 +22,8 @@ export const fetchVacancies = (page = 1) => {
           ID: vacancy.ID,
           Name: vacancy.Name,
           Posted: vacancy.Posted,
-          CompanyName: vacancy.Company.Name
+          CompanyName: vacancy.Company.Name,
+          CompanyLogo: vacancy.Company.Logo
         }
       })
 
