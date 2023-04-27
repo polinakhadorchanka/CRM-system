@@ -20,6 +20,8 @@ export const vacanciesReducer = (state = initialState, action: VacanciesAction) 
         ...state,
         error: action.payload
       }
+    case VACANCIES_ACTION_TYPE.CLEAN_VACANCIES_STATE:
+      return initialState;
     default:
       return state;
   }

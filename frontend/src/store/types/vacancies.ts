@@ -9,8 +9,8 @@ export interface VacanciesState {
 
 export enum VACANCIES_ACTION_TYPE {
   GET_VACANCIES = 'GET_VACANCIES',
-  SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
-  GET_ERROR = 'GET_VACANCIES_ERROR'
+  GET_ERROR = 'GET_VACANCIES_ERROR',
+  CLEAN_VACANCIES_STATE = 'CLEAN_VACANCIES_STATE'
 }
 
 interface GetVacanciesAction {
@@ -26,6 +26,11 @@ interface GetErrorAction {
   payload: IError
 }
 
+interface CleanStateAction {
+  type: VACANCIES_ACTION_TYPE.CLEAN_VACANCIES_STATE
+}
+
 export type VacanciesAction =
   | GetVacanciesAction
-  | GetErrorAction;
+  | GetErrorAction
+  | CleanStateAction;

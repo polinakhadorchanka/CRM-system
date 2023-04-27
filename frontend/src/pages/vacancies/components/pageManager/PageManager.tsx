@@ -57,6 +57,10 @@ const PageManager = () => {
     } else return [];
   }, [page]);
 
+  const onClick = () => {
+    dispatch({type: VACANCIES_ACTION_TYPE.CLEAN_VACANCIES_STATE});
+  }
+
   return (
     <div className={'flex flex-row justify-center flex-wrap gap-2 text-xs md:text-sm'}>
       <Link
@@ -66,7 +70,9 @@ const PageManager = () => {
           'hover:border-sky-600 hover:text-sky-600 dark:hover:border-sky-200 dark:hover:text-sky-200'} 
           pl-3 pr-2 py-1 border rounded-l-xl uppercase`}
         to={isPrev ? `/vacancies/${pageNum - 1}` : '/vacancies/prev'}
-        onClick={(e) => {if (!isPrev) e.preventDefault(); else scroll.scrollToTop({duration: '300'})}}>
+        onClick={(e) => {
+          if (!isPrev) e.preventDefault(); else onClick()
+        }}>
         prev
       </Link>
 
@@ -76,7 +82,7 @@ const PageManager = () => {
           ${pageNum === 1 ? 'border-sky-600 text-sky-600 dark:border-sky-200 dark:text-sky-200'
           : 'text-gray-800 border-gray-800 dark:text-gray-200 dark:border-gray-200 '}`}
         to={`/vacancies/1`}
-        onClick={() => scroll.scrollToTop({duration: '300'})}>
+        onClick={onClick}>
         1
       </Link>
 
@@ -89,7 +95,7 @@ const PageManager = () => {
           ${pageNum === link ? 'border-sky-600 text-sky-600 dark:border-sky-200 dark:text-sky-200'
             : 'text-gray-800 border-gray-800 dark:text-gray-200 dark:border-gray-200 '}`}
           to={`/vacancies/${link}`}
-          onClick={() => scroll.scrollToTop({duration: '300'})}>
+          onClick={onClick}>
           {link}
         </Link>
       })}
@@ -100,7 +106,7 @@ const PageManager = () => {
           ${pageNum === pageCount ? 'border-sky-600 text-sky-600 dark:border-sky-200 dark:text-sky-200'
           : 'text-gray-800 border-gray-800 dark:text-gray-200 dark:border-gray-200 '}`}
         to={`/vacancies/${pageCount}`}
-        onClick={() => scroll.scrollToTop({duration: '300'})}>
+        onClick={onClick}>
         {pageCount}
       </Link>
 
@@ -110,7 +116,9 @@ const PageManager = () => {
           : 'cursor-pointer text-gray-800 border-gray-800 dark:text-gray-200 dark:border-gray-200 hover:border-sky-600 hover:text-sky-600 dark:hover:border-sky-200 dark:hover:text-sky-200'} 
           pl-2 pr-3 py-1 border rounded-r-xl uppercase`}
         to={isNext ? `/vacancies/${pageNum + 1}` : '/vacancies/next'}
-        onClick={(e) => {if (!isNext) e.preventDefault(); else scroll.scrollToTop({duration: '300'})}}>
+        onClick={(e) => {
+          if (!isNext) e.preventDefault(); else onClick()
+        }}>
         next
       </Link>
     </div>
