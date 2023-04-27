@@ -10,6 +10,7 @@ export const vacanciesReducer = (state = initialState, action: VacanciesAction) 
   switch (action.type) {
     case VACANCIES_ACTION_TYPE.GET_VACANCIES:
       return {
+        ...state,
         vacancies: action.payload.vacancies,
         pageCount: action.payload.pageCount,
         error: null

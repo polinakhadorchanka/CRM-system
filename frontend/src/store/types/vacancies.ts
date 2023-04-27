@@ -1,4 +1,4 @@
-import {IVacancy, IVacancyShort} from "@store/types/vacancy";
+import {IVacancyShort} from "@store/types/vacancy";
 import {IError} from "@store/types/error";
 
 export interface VacanciesState {
@@ -9,6 +9,7 @@ export interface VacanciesState {
 
 export enum VACANCIES_ACTION_TYPE {
   GET_VACANCIES = 'GET_VACANCIES',
+  SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
   GET_ERROR = 'GET_VACANCIES_ERROR'
 }
 
