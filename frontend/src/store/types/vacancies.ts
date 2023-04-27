@@ -1,4 +1,4 @@
-import {IVacancy, IVacancyShort} from "@store/types/vacancy";
+import {IVacancyShort} from "@store/types/vacancy";
 import {IError} from "@store/types/error";
 
 export interface VacanciesState {
@@ -9,7 +9,8 @@ export interface VacanciesState {
 
 export enum VACANCIES_ACTION_TYPE {
   GET_VACANCIES = 'GET_VACANCIES',
-  GET_ERROR = 'GET_VACANCIES_ERROR'
+  GET_ERROR = 'GET_VACANCIES_ERROR',
+  CLEAN_VACANCIES_STATE = 'CLEAN_VACANCIES_STATE'
 }
 
 interface GetVacanciesAction {
@@ -25,6 +26,11 @@ interface GetErrorAction {
   payload: IError
 }
 
+interface CleanStateAction {
+  type: VACANCIES_ACTION_TYPE.CLEAN_VACANCIES_STATE
+}
+
 export type VacanciesAction =
   | GetVacanciesAction
-  | GetErrorAction;
+  | GetErrorAction
+  | CleanStateAction;

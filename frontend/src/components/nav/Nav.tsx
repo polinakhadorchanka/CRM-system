@@ -34,17 +34,23 @@ const Nav: FC<NavProps> = ({isAdmin = false}) => {
             ${animation ? 'opacity-100 left-0' : 'opacity-0 -left-20'}`}>
             <div className={'sm:container mx-auto p-4'}>
               <nav className={'flex flex-col gap-3'}>
-                <Link to={'/'}
+                <Link to={'/vacancies'}
                       className={'block uppercase text-gray-600 hover:text-sky-600 ' +
-                        'dark:text-gray-400 dark:hover:text-sky-200'}>Vacancies</Link>
+                        'dark:text-gray-400 dark:hover:text-sky-200'}>
+                  Vacancies
+                </Link>
                 <Link to={'/favorites'}
                       className={'block uppercase text-gray-600 hover:text-sky-600 ' +
-                        'dark:text-gray-400 dark:hover:text-sky-200'}>Favorites</Link>
+                        'dark:text-gray-400 dark:hover:text-sky-200'}>
+                  Favorites
+                </Link>
                 {
                   isAdmin &&
                   <Link to={'/tokens'}
                         className={'block uppercase text-gray-600 hover:text-sky-600 ' +
-                          'dark:text-gray-400 dark:hover:text-sky-200'}>Tokens</Link>
+                          'dark:text-gray-400 dark:hover:text-sky-200'}>
+                    Tokens
+                  </Link>
                 }
               </nav>
             </div>
@@ -57,7 +63,7 @@ const Nav: FC<NavProps> = ({isAdmin = false}) => {
 
       <div className={'hidden md:block'}>
         <nav className={'flex flex-row items-center gap-8 relative top-0.5'}>
-          <Link to={'/'}
+          <Link to={'/vacancies'}
                 className={'uppercase text-gray-600 hover:text-sky-600 ' +
                   'dark:text-gray-400 dark:hover:text-sky-200'}>Vacancies</Link>
           <Link to={'/favorites'}

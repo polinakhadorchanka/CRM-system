@@ -5,30 +5,40 @@ import {useTypedSelector} from "@hooks/useTypedSelector";
 import Error from "@pages/error";
 import PageLayout from "@layout/PageLayout";
 import VacancyList from "@pages/vacancies/components/vacancyList";
+import {useParams} from "react-router-dom";
+import Loading from "@components/loading";
 
 const Vacancies = () => {
   const dispatch: any = useDispatch();
+
+  const {page} = useParams();
   const {vacancies, pageCount, error} = useTypedSelector((state) => state.vacancies);
 
   useEffect(() => {
-    dispatch(fetchVacancies(1));
-  }, [dispatch]);
+    setTimeout(() => {
+      dispatch(fetchVacancies(Number(page)));
+    }, 1000);
+  }, [dispatch, page]);
 
   return (
-    <PageLayout>
+    <>
       {error
         ? <Error code={error.Code} value={error.Value}/>
-        : vacancies &&
-        <div>
-          <h1 className={'uppercase font-light text-gray-500 dark:text-gray-400 text-xl sm:text-2xl lg:text-3xl'}>
-            Vacancies
-          </h1>
-          <div>
-            <VacancyList />
-          </div>
-        </div>
+        : <PageLayout>
+          {
+            !vacancies ? <Loading/>
+              : <div>
+                <h1 className={'uppercase font-light text-gray-500 dark:text-gray-400 text-xl sm:text-2xl lg:text-3xl'}>
+                  Vacancies
+                </h1>
+                <div>
+                  <VacancyList/>
+                </div>
+              </div>
+          }
+        </PageLayout>
       }
-    </PageLayout>
+    </>
   );
 };
 
